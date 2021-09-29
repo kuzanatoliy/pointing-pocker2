@@ -1,0 +1,9 @@
+{
+  "name": "pointing-pocker2",
+  "version": "0.0.0",
+  "description": "Pointing pocker",
+  "repository": "https://github.com/kuzanatoliy/pointing-pocker2.git",
+  "author": "kuzanatoliy <njkznu@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
