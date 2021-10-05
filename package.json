@@ -5,5 +5,9 @@
   "repository": "https://github.com/kuzanatoliy/pointing-pocker2.git",
   "author": "kuzanatoliy <njkznu@gmail.com>",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@commitlint/config-conventional": "^13.2.0",
+    "commitlint": "^13.2.0"
+  }
 }
