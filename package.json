@@ -1,6 +1,15 @@
 {
   "name": "pointing-pocker2",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/front-end"
+  ],
+  "scripts": {
+    "fe:start": "yarn workspace @pointing-pocker2/front-end run start",
+    "fe:build": "yarn workspace @pointing-pocker2/front-end run build",
+    "fe:test": "yarn workspace @pointing-pocker2/front-end run test",
+    "fe:lint": "yarn workspace @pointing-pocker2/front-end run lint"
+  },
   "description": "Pointing pocker",
   "repository": "https://github.com/kuzanatoliy/pointing-pocker2.git",
   "author": "kuzanatoliy <njkznu@gmail.com>",
