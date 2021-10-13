@@ -1,13 +1,19 @@
 {
   "name": "pointing-pocker2",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "workspaces": [
-    "packages/front-end"
+    "packages/front-end",
+    "packages/back-end"
   ],
   "scripts": {
+    "be:start": "yarn workspace @pointing-pocker2/back-end run start",
+    "be:start:dist": "yarn workspace @pointing-pocker2/back-end run start:dist",
+    "be:start:dev": "yarn workspace @pointing-pocker2/back-end run start:dev",
     "fe:start": "yarn workspace @pointing-pocker2/front-end run start",
+    "be:build": "yarn workspace @pointing-pocker2/back-end run build",
     "fe:build": "yarn workspace @pointing-pocker2/front-end run build",
     "fe:test": "yarn workspace @pointing-pocker2/front-end run test",
+    "be:lint": "yarn workspace @pointing-pocker2/back-end run lint",
     "fe:lint": "yarn workspace @pointing-pocker2/front-end run lint"
   },
   "description": "Pointing pocker",
