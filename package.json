@@ -3,7 +3,8 @@
   "version": "0.2.0",
   "workspaces": [
     "packages/front-end",
-    "packages/back-end"
+    "packages/back-end",
+    "packages/types"
   ],
   "scripts": {
     "be:start": "yarn workspace @pointing-pocker2/back-end run start",
@@ -12,6 +13,7 @@
     "fe:start": "yarn workspace @pointing-pocker2/front-end run start",
     "be:build": "yarn workspace @pointing-pocker2/back-end run build",
     "fe:build": "yarn workspace @pointing-pocker2/front-end run build",
+    "types:build": "yarn workspace @pointing-pocker2/types run build",
     "fe:test": "yarn workspace @pointing-pocker2/front-end run test",
     "be:lint": "yarn workspace @pointing-pocker2/back-end run lint",
     "fe:lint": "yarn workspace @pointing-pocker2/front-end run lint"
