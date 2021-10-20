@@ -16,7 +16,8 @@
     "types:build": "yarn workspace @pointing-pocker2/types run build",
     "fe:test": "yarn workspace @pointing-pocker2/front-end run test",
     "be:lint": "yarn workspace @pointing-pocker2/back-end run lint",
-    "fe:lint": "yarn workspace @pointing-pocker2/front-end run lint"
+    "fe:lint": "yarn workspace @pointing-pocker2/front-end run lint",
+    "db:container": "docker run --rm -it -p 5432:5432 --name bc -e POSTGRES_PASSWORD=root -e POSTGRES_USER=root -e POSTGRES_DB=business.card.db postgres:14"
   },
   "description": "Pointing pocker",
   "repository": "https://github.com/kuzanatoliy/pointing-pocker2.git",
