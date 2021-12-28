@@ -3,5 +3,6 @@
   "ignore": ["**/*.spec.ts"],
   "watch": "src",
   "exec": "yarn start",
-  "ext": "ts"
+  "ext": "ts",
+  "delay": 2500
 }
