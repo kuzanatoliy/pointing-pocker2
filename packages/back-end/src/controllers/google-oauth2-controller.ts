@@ -23,13 +23,13 @@ export interface IGoogleUserData {
 }
 
 class GoogleOAuth2Controller {
-
   constructor(userService: IUserService, storageService: IUserStorageService) {
     const scope = encodeURIComponent(GOOGLE_SCOPE.join(' '));
-    const authRedirectUrl = `${ GOOGLE_AUTH_ENDPOINT }?response_type=code&client_id=${ GOOGLE_CLIENT_ID }&scope=${ scope }`;
+    const authRedirectUrl =
+      `${ GOOGLE_AUTH_ENDPOINT }?response_type=code&client_id=${ GOOGLE_CLIENT_ID }&scope=${ scope }`;
 
     this.entranceHandler = (req: Request, res: Response) => {
-      const redirectUrl = encodeURIComponent(req.get('redirect-url') || GOOGLE_REDIRECT_URL);
+      const redirectUrl = encodeURIComponent(GOOGLE_REDIRECT_URL);
 
       res.redirect(`${ authRedirectUrl }&redirect_uri=${ redirectUrl }`);
     };
@@ -43,7 +43,7 @@ class GoogleOAuth2Controller {
             client_secret: GOOGLE_CLIENT_SECRET,
             code,
             grant_type: 'authorization_code',
-            redirect_uri: req.get('redirect-url') || GOOGLE_REDIRECT_URL,
+            redirect_uri: GOOGLE_REDIRECT_URL,
           }),
           headers: { 'Content-Type': 'application/json' },
           method: 'POST',
@@ -68,16 +68,17 @@ class GoogleOAuth2Controller {
 
         storageService.setData(req.session, <IUser>user);
 
-        res.redirect(req.get('success-url') || '/');
+        res.redirect('/');
       } catch (error) {
-        res.redirect(req.get('failure-url') || '/failure');
+        res.redirect('/failure');
       }
     };
   };
 
   public entranceHandler: RequestHandler;
   public outputHandler: RequestHandler;
-
 }
+
+export type IGoogleOAuth2Controller = GoogleOAuth2Controller;
 
 export const googleOAuth2Controller = new GoogleOAuth2Controller(userService, userStorageService);

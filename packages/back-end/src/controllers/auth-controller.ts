@@ -4,7 +4,6 @@ import { OK, FORBIDDEN } from 'http-status';
 import { IUserStorageService, userStorageService } from '../services';
 
 class AuthController {
-
   private storageService: IUserStorageService;
 
   constructor(storageService: IUserStorageService) {
@@ -19,7 +18,7 @@ class AuthController {
     } else {
       res.status(FORBIDDEN).json({});
     }
-  }
+  };
 
   public vefifyUserHandler = (req: Request, res: Response, next: NextFunction): void => {
     const user = this.storageService.getData(req.session);
@@ -29,14 +28,13 @@ class AuthController {
     } else {
       res.status(FORBIDDEN).json({});
     }
-  }
+  };
 
   public cleanUserHandler = (req: Request, res: Response): void => {
     this.storageService.cleanData(req.session);
 
     res.status(OK).json({});
-  }
-
+  };
 }
 
 export type IAuthController = AuthController;

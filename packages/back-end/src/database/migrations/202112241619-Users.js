@@ -1,7 +1,7 @@
-const { TABLES, FIELD_LENGTHS } = require("../constants");
+const { TABLES, FIELD_LENGTHS } = require('../constants');
 
 module.exports = {
-  down: queryInterface => queryInterface.dropTable(TABLES.USERS),
+  down: (queryInterface) => queryInterface.dropTable(TABLES.USERS),
   up: (queryInterface, DataTypes) => queryInterface.createTable(TABLES.USERS, {
     authId: {
       allowNull: false,
