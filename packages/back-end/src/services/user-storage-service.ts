@@ -9,14 +9,14 @@ export interface IStorage extends Session {
 class UserStorageService {
   cleanData = (storage: IStorage): void => {
     storage.user = undefined;
-  }
+  };
 
-  public getData = (storage: IStorage): IUser | undefined => storage.user
+  public getData = (storage: IStorage): IUser | undefined => storage.user;
 
   public setData = (storage: IStorage, user: IUser): IUser => {
     storage.user = user;
     return storage.user;
-  }
+  };
 }
 
 export type IUserStorageService = UserStorageService;
