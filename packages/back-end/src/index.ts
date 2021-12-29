@@ -1,12 +1,12 @@
 
 import * as http from 'http';
+
 import * as bodyParser from 'body-parser';
 import session from 'express-session';
 import cors from 'cors';
 
 import { APP_PORT, APP_SECRET } from './constants';
 import { authRouter, oauth2GoogleRouter } from './routes';
-
 import { Application } from './Application';
 
 const middlewares = [

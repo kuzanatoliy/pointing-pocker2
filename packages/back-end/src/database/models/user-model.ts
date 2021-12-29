@@ -1,7 +1,6 @@
 import { DataTypes, Model, ModelCtor } from 'sequelize';
 
 import { connector } from '../connector';
-
 import {
   TABLES,
   FIELD_LENGTHS,

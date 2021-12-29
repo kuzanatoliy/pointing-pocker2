@@ -62,6 +62,7 @@
     ],
     "rules": {
       "import/no-internal-modules": [2, { "forbid": ["**/(database)/{migrations,seeders}/*"] }],
+      "import/no-nodejs-modules": 0,
       "require-jsdoc": 0,
       "max-len": [
         2,
@@ -76,10 +77,11 @@
       ]
     },
     "overrides": [{
-      "files": ["{config,constants}.js"],
+      "files": ["*.js"],
       "rules": {
         "import/unambiguous": 0,
-        "import/no-commonjs": 0
+        "import/no-commonjs": 0,
+        "import/group-exports": 2
       }
     }]
   }
