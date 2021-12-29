@@ -34,8 +34,23 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "../../.eslintrc"
+    ],
+    "overrides": [{
+      "files": ["src/*.{ts,tsx}"],
+      "rules": {
+        "import/named": 0,
+        "import/no-unassigned-import": 0,
+        "import/no-default-export": 0,
+        "import/no-extraneous-dependencies": 0
+      }
+    }, {
+      "files": ["react-app-env.d.ts"],
+      "rules": {
+        "import/unambiguous": 0
+      }
+    }]
   },
   "browserslist": {
     "production": [
