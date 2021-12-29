@@ -7,7 +7,7 @@
     "start": "node --inspect=5858 -r dotenv/config -r ts-node/register src",
     "start:dev": "ts-node-dev --inspect=5858 -r dotenv/config src",
     "start:dist": "node -r dotenv/config dist",
-    "lint": "eslint src/**/*.ts",
+    "lint": "eslint src/**/*.{ts,js}",
     "db:create": "sequelize db:create",
     "db:drop": "sequelize db:drop",
     "db:migrate": "sequelize db:migrate",
@@ -35,9 +35,7 @@
     "@typescript-eslint/eslint-plugin": "5.0.0",
     "@typescript-eslint/parser": "5.0.0",
     "dotenv": "10.0.0",
-    "eslint": "8.0.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-import": "2.25.2",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "5.1.0",
     "sequelize-cli": "6.3.0",
@@ -47,11 +45,12 @@
   },
   "eslintConfig": {
     "env": {
-      "browser": true,
+      "node": true,
       "es2021": true
     },
     "extends": [
-      "google"
+      "google",
+      "../../.eslintrc"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -62,6 +61,8 @@
       "@typescript-eslint"
     ],
     "rules": {
+      "import/no-internal-modules": [2, { "forbid": ["**/(database)/{migrations,seeders}/*"] }],
+      "import/no-nodejs-modules": 0,
       "require-jsdoc": 0,
       "max-len": [
         2,
@@ -74,6 +75,14 @@
         2,
         "always"
       ]
-    }
+    },
+    "overrides": [{
+      "files": ["*.js"],
+      "rules": {
+        "import/unambiguous": 0,
+        "import/no-commonjs": 0,
+        "import/group-exports": 2
+      }
+    }]
   }
 }
