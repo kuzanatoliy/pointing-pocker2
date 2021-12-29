@@ -1,5 +1,5 @@
 const TABLES = Object.freeze({
-  USERS: "Users",
+  USERS: 'Users',
 });
 
 const FIELD_LENGTHS = Object.freeze({

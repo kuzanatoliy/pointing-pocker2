@@ -2,6 +2,7 @@ module.exports = {
   extends: [
     "plugin:import/typescript"
   ],
+  plugins: ["import"],
   rules: {
     /** eslint-plugin-import */
     

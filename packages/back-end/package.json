@@ -7,7 +7,7 @@
     "start": "node --inspect=5858 -r dotenv/config -r ts-node/register src",
     "start:dev": "ts-node-dev --inspect=5858 -r dotenv/config src",
     "start:dist": "node -r dotenv/config dist",
-    "lint": "eslint src/**/*.ts",
+    "lint": "eslint src/**/*.{ts,js}",
     "db:create": "sequelize db:create",
     "db:drop": "sequelize db:drop",
     "db:migrate": "sequelize db:migrate",
