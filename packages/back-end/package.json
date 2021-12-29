@@ -45,7 +45,7 @@
   },
   "eslintConfig": {
     "env": {
-      "browser": true,
+      "node": true,
       "es2021": true
     },
     "extends": [
@@ -61,6 +61,7 @@
       "@typescript-eslint"
     ],
     "rules": {
+      "import/no-internal-modules": [2, { "forbid": ["**/(database)/{migrations,seeders}/*"] }],
       "require-jsdoc": 0,
       "max-len": [
         2,

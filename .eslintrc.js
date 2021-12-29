@@ -7,20 +7,20 @@ module.exports = {
     /** eslint-plugin-import */
     
     /** Static analysis */
-    "import/no-unresolved": 0,
-    "import/named": 0,
-    "import/default": 0,
-    "import/namespace": 0,
-    "import/no-restricted-path": 0,
-    "import/no-absolute-path": 0,
-    "import/no-dynamic-require": 0,
+    "import/no-unresolved": [2, { caseSensitive: true }],
+    "import/named": 2,
+    "import/default": 2,
+    "import/namespace": 2,
+    "import/no-restricted-paths": 0,
+    "import/no-absolute-path": 2,
+    "import/no-dynamic-require": 2,
     "import/no-internal-modules": 0,
-    "import/no-webpack-loader-syntax": 0,
-    "import/no-self-import": 0,
-    "import/no-cycle": 0,
-    "import/no-useless-path-segments": 0,
+    "import/no-webpack-loader-syntax": 2,
+    "import/no-self-import": 2,
+    "import/no-cycle": 2,
+    "import/no-useless-path-segments": 2,
     "import/no-relative-parent-imports": 0,
-    "import/no-relative-packages": 0,
+    "import/no-relative-packages": 2,
 
     /** Helpful warnings */
     "import/export": 0,
