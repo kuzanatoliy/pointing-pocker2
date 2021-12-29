@@ -74,6 +74,13 @@
         2,
         "always"
       ]
-    }
+    },
+    "overrides": [{
+      "files": ["{config,constants}.js"],
+      "rules": {
+        "import/unambiguous": 0,
+        "import/no-commonjs": 0
+      }
+    }]
   }
 }

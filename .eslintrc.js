@@ -37,11 +37,11 @@ module.exports = {
     "import/no-unused-modules": 2,
 
     /** Module systems */
-    "import/unambiguous": 0,
-    "import/no-commonjs": 0,
-    "import/no-amd": 0,
-    "import/no-nodejs-modules": 0,
-    "import/no-import-module-exports": 0,
+    "import/unambiguous": 2,
+    "import/no-commonjs": 2,
+    "import/no-amd": 2,
+    "import/no-nodejs-modules": 2,
+    "import/no-import-module-exports": 2,
 
     /** Style guide */
     "import/first": 0,
@@ -61,4 +61,10 @@ module.exports = {
     "import/group-exports": 0,
     "import/dynamic-import-chunkname": 0,
   },
+  overrides: [{
+    files: [".eslintrc.js"],
+    rules: {
+      "import/no-commonjs": 0,
+    }
+  }],
 }
