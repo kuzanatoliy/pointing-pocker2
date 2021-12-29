@@ -7,7 +7,7 @@ module.exports = {
     /** eslint-plugin-import */
     
     /** Static analysis */
-    "import/no-unresolved": [2, { caseSensitive: true }],
+    "import/no-unresolved": [ 2, { caseSensitive: true } ],
     "import/named": 2,
     "import/default": 2,
     "import/namespace": 2,
@@ -23,13 +23,18 @@ module.exports = {
     "import/no-relative-packages": 2,
 
     /** Helpful warnings */
-    "import/export": 0,
-    "import/no-named-as-default": 0,
-    "import/no-named-as-default-member": 0,
-    "import/no-deprecated": 0,
-    "import/no-extraneous-dependencies": 0,
-    "import/no-mutable-exports": 0,
-    "import/no-unused-modules": 0,
+    "import/export": 2,
+    "import/no-named-as-default": 2,
+    "import/no-named-as-default-member": 2,
+    "import/no-deprecated": 1,
+    "import/no-extraneous-dependencies": [ 1, {
+      devDependencies: [ "**/*.{test,spec}.{js,jsx,ts,tsx}" ],
+      optionalDependencies: false,
+      peerDependencies: false,
+      bundledDependencies: false,
+    }],
+    "import/no-mutable-exports": 2,
+    "import/no-unused-modules": 2,
 
     /** Module systems */
     "import/unambiguous": 0,
