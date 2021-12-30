@@ -1,12 +1,13 @@
 {
   "name": "pointing-pocker2",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "workspaces": [
     "packages/front-end",
     "packages/back-end",
     "packages/types"
   ],
   "scripts": {
+    "postinstall": "husky install",
     "be:start": "yarn workspace @pointing-pocker2/back-end run start",
     "be:start:dist": "yarn workspace @pointing-pocker2/back-end run start:dist",
     "be:start:dev": "yarn workspace @pointing-pocker2/back-end run start:dev",
@@ -30,6 +31,6 @@
     "commitlint": "13.2.0",
     "eslint": "8.5.0",
     "eslint-plugin-import": "2.25.3",
-    "husky": "7.0.2"
+    "husky": "7.0.4"
   }
 }
