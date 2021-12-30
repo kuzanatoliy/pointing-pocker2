@@ -1,12 +1,13 @@
 {
   "name": "pointing-pocker2",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "workspaces": [
     "packages/front-end",
     "packages/back-end",
     "packages/types"
   ],
   "scripts": {
+    "postinstall": "husky install",
     "be:start": "yarn workspace @pointing-pocker2/back-end run start",
     "be:start:dist": "yarn workspace @pointing-pocker2/back-end run start:dist",
     "be:start:dev": "yarn workspace @pointing-pocker2/back-end run start:dev",
@@ -17,6 +18,7 @@
     "fe:test": "yarn workspace @pointing-pocker2/front-end run test",
     "be:lint": "yarn workspace @pointing-pocker2/back-end run lint",
     "fe:lint": "yarn workspace @pointing-pocker2/front-end run lint",
+    "build": "yarn run be:build && yarn run fe:build",
     "lint": "yarn run be:lint && yarn run fe:lint",
     "db:container": "docker run --rm -it -p 5432:5432 --name bc -e POSTGRES_PASSWORD=root -e POSTGRES_USER=root -e POSTGRES_DB=pointing.pocker2.db postgres:14"
   },
@@ -30,6 +32,6 @@
     "commitlint": "13.2.0",
     "eslint": "8.5.0",
     "eslint-plugin-import": "2.25.3",
-    "husky": "7.0.2"
+    "husky": "7.0.4"
   }
 }
