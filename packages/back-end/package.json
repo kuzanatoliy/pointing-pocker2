@@ -1,6 +1,6 @@
 {
   "name": "@pointing-pocker2/back-end",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "scripts": {
     "build": "tsc",
@@ -12,7 +12,8 @@
     "db:drop": "sequelize db:drop",
     "db:migrate": "sequelize db:migrate",
     "db:migrate:undo": "sequelize db:migrate:undo:all",
-    "db:seed": "sequelize db:seed:all"
+    "db:seed": "sequelize db:seed:all",
+    "test": "jest"
   },
   "dependencies": {
     "body-parser": "1.19.1",
@@ -26,18 +27,25 @@
     "sequelize": "6.12.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@types/body-parser": "1.19.2",
     "@types/cors": "2.8.12",
     "@types/express": "4.17.13",
     "@types/express-session": "1.17.4",
+    "@types/jest": "^27.4.0",
     "@types/node-fetch": "2.5.12",
     "@types/sequelize": "4.28.11",
     "@typescript-eslint/eslint-plugin": "5.0.0",
     "@typescript-eslint/parser": "5.0.0",
+    "babel-jest": "^27.4.5",
     "dotenv": "10.0.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "5.1.0",
+    "jest": "27.4.5",
     "sequelize-cli": "6.3.0",
     "ts-node": "10.3.0",
     "ts-node-dev": "1.1.8",
@@ -61,7 +69,14 @@
       "@typescript-eslint"
     ],
     "rules": {
-      "import/no-internal-modules": [2, { "forbid": ["**/(database)/{migrations,seeders}/*"] }],
+      "import/no-internal-modules": [
+        2,
+        {
+          "forbid": [
+            "**/(database)/{migrations,seeders}/*"
+          ]
+        }
+      ],
       "import/no-nodejs-modules": 0,
       "require-jsdoc": 0,
       "max-len": [
@@ -76,13 +91,17 @@
         "always"
       ]
     },
-    "overrides": [{
-      "files": ["*.js"],
-      "rules": {
-        "import/unambiguous": 0,
-        "import/no-commonjs": 0,
-        "import/group-exports": 2
+    "overrides": [
+      {
+        "files": [
+          "*.js"
+        ],
+        "rules": {
+          "import/unambiguous": 0,
+          "import/no-commonjs": 0,
+          "import/group-exports": 2
+        }
       }
-    }]
+    ]
   }
 }

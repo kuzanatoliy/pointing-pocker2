@@ -70,5 +70,10 @@ module.exports = {
       'import/unambiguous': 0,
       'import/no-commonjs': 0,
     }
+  }, {
+    files: ['*.spec.ts'],
+    rules: {
+      'import/unambiguous': 0,
+    }
   }],
 }
