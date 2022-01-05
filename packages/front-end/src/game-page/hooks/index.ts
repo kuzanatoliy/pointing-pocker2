@@ -1,0 +1,1 @@
+export const GAME_PAGE_HOOKS = 'GAME_PAGE_HOOKS';
