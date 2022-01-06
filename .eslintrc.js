@@ -37,7 +37,7 @@ module.exports = {
     'import/no-unused-modules': 2,
 
     /** Module systems */
-    'import/unambiguous': 2,
+    'import/unambiguous': 0,
     'import/no-commonjs': 2,
     'import/no-amd': 2,
     'import/no-nodejs-modules': 2,
@@ -67,13 +67,7 @@ module.exports = {
   overrides: [{
     files: ['.eslintrc.js'],
     rules: {
-      'import/unambiguous': 0,
       'import/no-commonjs': 0,
-    }
-  }, {
-    files: ['*.spec.ts'],
-    rules: {
-      'import/unambiguous': 0,
     }
   }],
 }

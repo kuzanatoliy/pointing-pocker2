@@ -11,11 +11,11 @@ jest.mock('../controllers', () => ({
 describe('google-oauth2-router', () => {
   const count = Object.keys(AuthRouterPaths).length;
 
-  it.todo(`should contain ${count} paths`, /* () => {
+  it(`should contain ${count} paths`, () => {
     expect(authRouter).countOfRouterPathsToBe(count);
-  }*/);
+  });
 
-  it.skip.each`
+  it.each`
     path                      | handler
     ${AuthRouterPaths.USER}   | ${authController.getUserHandler}
     ${AuthRouterPaths.LOGOUT} | ${authController.cleanUserHandler}
