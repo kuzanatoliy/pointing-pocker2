@@ -6,7 +6,7 @@ import session from 'express-session';
 import cors from 'cors';
 
 import { APP_PORT, APP_SECRET } from './constants';
-import { authRouter, oauth2GoogleRouter } from './routes';
+import { authRouter, googleOAuth2Router } from './routes';
 import { Application } from './Application';
 
 const middlewares = [
@@ -19,7 +19,7 @@ const middlewares = [
   }),
 ];
 
-const server = http.createServer(new Application(middlewares, [authRouter, oauth2GoogleRouter]));
+const server = http.createServer(new Application(middlewares, [authRouter, googleOAuth2Router]));
 
 server.listen(APP_PORT, () => {
   console.log(`Server run on ${ APP_PORT } port`);

@@ -77,8 +77,10 @@
           ]
         }
       ],
+      "no-unused-vars": 1,
       "import/no-nodejs-modules": 0,
       "require-jsdoc": 0,
+      "indent": ["error", 2],
       "max-len": [
         2,
         {

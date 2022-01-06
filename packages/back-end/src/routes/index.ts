@@ -1,2 +1,2 @@
 export * from './auth-router';
-export * from './oauth2-google-router';
+export * from './google-oauth2-router';
