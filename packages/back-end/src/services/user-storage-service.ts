@@ -7,7 +7,7 @@ export interface IStorage extends Session {
 }
 
 class UserStorageService {
-  cleanData = (storage: IStorage): void => {
+  public cleanData = (storage: IStorage): void => {
     storage.user = undefined;
   };
 
