@@ -15,23 +15,22 @@ import {
 } from '../constants';
 
 export interface IGoogleUserData {
-  sub: string,
-  email: string,
-  'given_name': string,
-  'family_name': string,
-  picture: string,
+  sub: string;
+  email: string;
+  given_name: string;
+  family_name: string;
+  picture: string;
 }
 
 class GoogleOAuth2Controller {
   constructor(userService: IUserService, storageService: IUserStorageService) {
     const scope = encodeURIComponent(GOOGLE_SCOPE.join(' '));
-    const authRedirectUrl =
-      `${ GOOGLE_AUTH_ENDPOINT }?response_type=code&client_id=${ GOOGLE_CLIENT_ID }&scope=${ scope }`;
+    const authRedirectUrl = `${GOOGLE_AUTH_ENDPOINT}?response_type=code&client_id=${GOOGLE_CLIENT_ID}&scope=${scope}`;
 
     this.entranceHandler = (req: Request, res: Response) => {
       const redirectUrl = encodeURIComponent(GOOGLE_REDIRECT_URL);
 
-      res.redirect(`${ authRedirectUrl }&redirect_uri=${ redirectUrl }`);
+      res.redirect(`${authRedirectUrl}&redirect_uri=${redirectUrl}`);
     };
 
     this.outputHandler = async (req: Request, res: Response) => {
@@ -55,7 +54,7 @@ class GoogleOAuth2Controller {
           given_name: firstName,
           family_name: lastName,
           picture: photoUrl,
-        } = <IGoogleUserData>jwtDecode((await result.json() as { id_token: string; }).id_token);
+        } = <IGoogleUserData>jwtDecode(((await result.json()) as { id_token: string }).id_token);
 
         const user = await userService.createOrUpdate({
           authId,
@@ -73,7 +72,7 @@ class GoogleOAuth2Controller {
         res.redirect('/failure');
       }
     };
-  };
+  }
 
   public entranceHandler: RequestHandler;
   public outputHandler: RequestHandler;

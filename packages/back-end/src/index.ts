@@ -1,4 +1,3 @@
-
 import * as http from 'http';
 
 import * as bodyParser from 'body-parser';
@@ -22,5 +21,5 @@ const middlewares = [
 const server = http.createServer(new Application(middlewares, [authRouter, googleOAuth2Router]));
 
 server.listen(APP_PORT, () => {
-  console.log(`Server run on ${ APP_PORT } port`);
+  console.log(`Server run on ${APP_PORT} port`);
 });
