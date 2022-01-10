@@ -15,10 +15,12 @@
     "be:build": "yarn workspace @pointing-pocker2/back-end run build",
     "fe:build": "yarn workspace @pointing-pocker2/front-end run build",
     "types:build": "yarn workspace @pointing-pocker2/types run build",
+    "be:test": "yarn workspace @pointing-pocker2/back-end run test",
     "fe:test": "yarn workspace @pointing-pocker2/front-end run test",
     "be:lint": "yarn workspace @pointing-pocker2/back-end run lint",
     "fe:lint": "yarn workspace @pointing-pocker2/front-end run lint",
     "build": "yarn run be:build && yarn run fe:build",
+    "test": "yarn run be:test && yarn run fe:test",
     "lint": "yarn run be:lint && yarn run fe:lint",
     "db:container": "docker run --rm -it -p 5432:5432 --name bc -e POSTGRES_PASSWORD=root -e POSTGRES_USER=root -e POSTGRES_DB=pointing.pocker2.db postgres:14"
   },

@@ -2,12 +2,17 @@ import { IRouter, Router } from 'express';
 
 import { IAuthController, authController } from '../controllers';
 
+export enum AuthRouterPaths {
+  USER = '/user',
+  LOGOUT = '/logout',
+}
+
 class AuthRouter {
   constructor(controller: IAuthController) {
     const router = Router();
 
-    router.get('/user', controller.getUserHandler);
-    router.get('/logout', controller.cleanUserHandler);
+    router.get(AuthRouterPaths.USER, controller.getUserHandler);
+    router.get(AuthRouterPaths.LOGOUT, controller.cleanUserHandler);
 
     return router;
   }
