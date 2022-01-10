@@ -1,10 +1,7 @@
 import { DataTypes, Model, ModelCtor } from 'sequelize';
 
 import { connector } from '../connector';
-import {
-  TABLES,
-  FIELD_LENGTHS,
-} from '../constants';
+import { TABLES, FIELD_LENGTHS } from '../constants';
 
 export interface IUser {
   authId: string;
@@ -18,9 +15,9 @@ export interface IUser {
   updatedAt?: Date;
 }
 
-export interface IUserInstance extends Model<IUser, Omit<IUser, 'id' | 'createAt' | 'updateAt'>> {};
+export interface IUserInstance extends Model<IUser, Omit<IUser, 'id' | 'createAt' | 'updateAt'>> {}
 
-export interface IUserModel extends ModelCtor<IUserInstance> {};
+export interface IUserModel extends ModelCtor<IUserInstance> {}
 
 export const userModel = connector.define<IUserInstance>(TABLES.USERS, {
   authId: {

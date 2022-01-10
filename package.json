@@ -19,6 +19,8 @@
     "fe:test": "yarn workspace @pointing-pocker2/front-end run test",
     "be:lint": "yarn workspace @pointing-pocker2/back-end run lint",
     "fe:lint": "yarn workspace @pointing-pocker2/front-end run lint",
+    "prettier:write": "prettier --write .",
+    "prettier:check": "prettier --check .",
     "build": "yarn run be:build && yarn run fe:build",
     "test": "yarn run be:test && yarn run fe:test",
     "lint": "yarn run be:lint && yarn run fe:lint",
@@ -33,7 +35,10 @@
     "@commitlint/config-conventional": "13.2.0",
     "commitlint": "13.2.0",
     "eslint": "8.5.0",
+    "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "2.25.3",
-    "husky": "7.0.4"
+    "eslint-plugin-prettier": "4.0.0",
+    "husky": "7.0.4",
+    "prettier": "2.5.1"
   }
 }

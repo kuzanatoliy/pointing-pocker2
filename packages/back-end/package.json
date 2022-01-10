@@ -1,6 +1,6 @@
 {
   "name": "@pointing-pocker2/back-end",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "scripts": {
     "build": "tsc",
@@ -80,7 +80,10 @@
       "no-unused-vars": 1,
       "import/no-nodejs-modules": 0,
       "require-jsdoc": 0,
-      "indent": ["error", 2],
+      "indent": [
+        "error",
+        2
+      ],
       "max-len": [
         2,
         {

@@ -1,13 +1,11 @@
 module.exports = {
-  extends: [
-    'plugin:import/typescript'
-  ],
-  plugins: ['import'],
+  extends: ['plugin:import/typescript', 'prettier'],
+  plugins: ['import', 'prettier'],
   rules: {
     /** eslint-plugin-import */
-    
+
     /** Static analysis */
-    'import/no-unresolved': [ 2, { caseSensitive: true } ],
+    'import/no-unresolved': [2, { caseSensitive: true }],
     'import/named': 2,
     'import/default': 2,
     'import/namespace': 2,
@@ -27,12 +25,15 @@ module.exports = {
     'import/no-named-as-default': 2,
     'import/no-named-as-default-member': 2,
     'import/no-deprecated': 1,
-    'import/no-extraneous-dependencies': [ 1, {
-      devDependencies: [ '**/*.{test,spec}.{js,jsx,ts,tsx}' ],
-      optionalDependencies: false,
-      peerDependencies: false,
-      bundledDependencies: false,
-    }],
+    'import/no-extraneous-dependencies': [
+      1,
+      {
+        devDependencies: ['**/*.{test,spec}.{js,jsx,ts,tsx}'],
+        optionalDependencies: false,
+        peerDependencies: false,
+        bundledDependencies: false,
+      },
+    ],
     'import/no-mutable-exports': 2,
     'import/no-unused-modules': 2,
 
@@ -49,10 +50,13 @@ module.exports = {
     'import/no-duplicates': 2,
     'import/no-namespace': 0,
     'import/extensions': 1,
-    'import/order': [ 2, {
-      groups: [ 'builtin', 'external', 'type', 'internal', ],
-      'newlines-between': 'always',
-    }],
+    'import/order': [
+      2,
+      {
+        groups: ['builtin', 'external', 'type', 'internal'],
+        'newlines-between': 'always',
+      },
+    ],
     'import/newline-after-import': 1,
     'import/prefer-default-export': 0,
     'import/max-dependencies': 0,
@@ -63,11 +67,24 @@ module.exports = {
     'import/no-anonymous-default-export': 0,
     'import/group-exports': 0,
     'import/dynamic-import-chunkname': 0,
+
+    'comma-dangle': [
+      'error',
+      {
+        arrays: 'only-multiline',
+        objects: 'only-multiline',
+        imports: 'only-multiline',
+        exports: 'only-multiline',
+        functions: 'never',
+      },
+    ],
   },
-  overrides: [{
-    files: ['.eslintrc.js'],
-    rules: {
-      'import/no-commonjs': 0,
-    }
-  }],
-}
+  overrides: [
+    {
+      files: ['.eslintrc.js'],
+      rules: {
+        'import/no-commonjs': 0,
+      },
+    },
+  ],
+};

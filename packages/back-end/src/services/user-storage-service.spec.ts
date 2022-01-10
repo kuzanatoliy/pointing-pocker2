@@ -1,4 +1,3 @@
-
 import { IStorage, userStorageService } from './user-storage-service';
 import { IUser } from '../database';
 

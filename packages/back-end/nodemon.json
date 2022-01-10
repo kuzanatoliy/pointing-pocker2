@@ -1,8 +1,0 @@
-{
-  "verbose": true,
-  "ignore": ["**/*.spec.ts"],
-  "watch": "src",
-  "exec": "yarn start",
-  "ext": "ts",
-  "delay": 2500
-}
