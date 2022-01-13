@@ -7,8 +7,8 @@ import { SettingsPage } from './settings-page';
 
 export enum PATHS {
   HOME = '/',
-  SETTINGS = 'settings',
-  GAME = 'game',
+  SETTINGS = '/settings',
+  GAME = '/game',
   ERROR = '*',
 }
 

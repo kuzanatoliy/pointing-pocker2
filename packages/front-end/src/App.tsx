@@ -1,14 +1,7 @@
-import { Routes, Route } from 'react-router-dom';
+import { memo } from 'react';
 
-function App() {
-  return (
-    <Routes>
-      <Route path='/' element={<div>home</div>} />
-      <Route path='settings' element={'settings'} />
-      <Route path='game' element={'game'} />
-      <Route path='*' element={'error'} />
-    </Routes>
-  );
-}
+import { Router } from './router';
+
+const App = memo(() => <Router />);
 
 export default App;
