@@ -3,15 +3,15 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { Router, PATHS } from './router';
 
-jest.mock('./game-page', () => ({
+jest.mock('../../../game-page', () => ({
   GamePage: () => <div>GamePage</div>,
 }));
 
-jest.mock('./home-page', () => ({
+jest.mock('../../../home-page', () => ({
   HomePage: () => <div>HomePage</div>,
 }));
 
-jest.mock('./settings-page', () => ({
+jest.mock('../../../settings-page', () => ({
   SettingsPage: () => <div>SettingsPage</div>,
 }));
 
