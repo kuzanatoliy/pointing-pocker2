@@ -1,9 +1,9 @@
 import { VFC } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { GamePage } from './game-page';
-import { HomePage } from './home-page';
-import { SettingsPage } from './settings-page';
+import { GamePage } from '../../../game-page';
+import { HomePage } from '../../../home-page';
+import { SettingsPage } from '../../../settings-page';
 
 export enum PATHS {
   HOME = '/',
